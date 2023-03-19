@@ -1,29 +1,53 @@
 <script setup>
-
-
+import listProjets from '@/components/listProjets.vue'
+import listProjetsDev from '@/components/listProjetsDev.vue'
+import listProjetsDesign from '@/components/listProjetsDesign.vue'
+import listProjetsTruc from '@/components/listProjetsTruc.vue'
+import {ref} from 'vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid';
 import { onMounted } from 'vue';
+import { supabase } from '@/supabase';
 
+const title = ref()
+const allProjetsVisible = ref(true)
+const devProjetsVisible = ref(false)
+const designProjetsVisible = ref(false)
+const trucProjetsVisible = ref(false)
 
-
-const selectAll = async() => {
-
+const selectProjets = () => {
+    
+    devProjetsVisible.value = false
+    designProjetsVisible.value = false
+    trucProjetsVisible.value = false
+    allProjetsVisible.value = true
 }
 
-const selectDev = async() => {
 
+const selectDev = () => {
+    allProjetsVisible.value = false
+    designProjetsVisible.value = false
+    trucProjetsVisible.value = false
+    devProjetsVisible.value = true
 }
 
-const selectDesign = async() => {
 
-}
+const selectDesign = () => {
+    allProjetsVisible.value = false 
+     allProjetsVisible.value = false
+     devProjetsVisible.value = false
+     designProjetsVisible.value = true
+    }
 
-const selectTruc = async() => {
 
-}
+const selectTruc = () => {
+    allProjetsVisible.value = false
+    devProjetsVisible.value = false
+    designProjetsVisible.value = false
+    trucProjetsVisible.value = true
+    }
 
 onMounted( async() => {
-  await selectAll()
+  selectProjets()
 })
 </script>
 
@@ -76,13 +100,24 @@ mounted() {
     </div>
     <div class="bg-zinc-900 pt-5 sm:pt-10">
       <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly mx-5">
-        <li class="relative"><button class="active" @click="selectAll" href="">Projets récents</button></li>
+        <li class="relative"><button class="active" @click="selecAll" href="">Projets récents</button></li>
         <li class="relative"><button @click="selectDev" href="">Sites web</button></li>
         <li class="relative"><button @click="selectDesign" href="">Quelque chose</button></li>
         <li class="relative"><button @click="selectTruc" href="">Untruciyvhkv</button></li>
       </ul>
       <div>
-      <div class="w-36 h-36 sm:w-96 sm:h-96 block bg-cyan-500 rounded-full blur-3xl opacity-60"></div>
+      <div v-show="allProjetsVisible">
+        <listProjets class="relative mt-5" :max="9" />
+      </div>
+      <div v-show="devProjetsVisible">
+        <listProjetsDev class="relative mt-5" :max="9" />
+      </div>
+      <div v-show="designProjetsVisible">
+        <listProjetsDesign class="relative mt-5" :max="9" />
+      </div>
+      <div v-show="trucProjetsVisible">
+        <listProjetsTruc class="relative mt-5" :max="9" />
+      </div>
       </div>
       <div class="w-max m-auto bg-sky-500 text-xs sm:text-2xl rounded-xl p-1">
         <div class="bg-black h-full w-full rounded-lg px-8 py-1">
@@ -94,21 +129,21 @@ mounted() {
       <img class="-mt-10 w-1/2 sm:w-1/4" src="@/assets/wave1.svg" alt="">
     </div>
     <div class="bg-zinc-900 pb-10">
-      <img class="w-1/3 sm:w-1/5 relative" src="@/assets/wave2.svg" alt="">
-      <div class="border-2 border-red-500 w-3/4 h-fit m-auto py-5 bg-zinc-700">
+      <img class="w-1/3 sm:w-1/4  " src="@/assets/wave2.svg" alt="">
+      <div class="border-2 border-cyan-500 w-3/4 h-fit m-auto py-5 bg-zinc-700">
         <div class="bg-[url('src/assets/morphCircle.svg')] bg-contain bg-center bg-no-repeat">
           <div class="flex flex-col sm:flex-row-reverse">
             <div>
-            <div class="font-unbounded text-2xl text-center">
-              <p>Contactez</p>
-              <p class="test"> moi</p>
-            </div>
-            <p class="mx-10 font-poppins">Pour toute questions sur mes projets, ou pour des demandes particulières, n'hésitez pas à me contacter.</p>
+              <div class="font-unbounded text-2xl text-center"> 
+                <p>Contactez</p>
+                <p class="test"> moi</p>
+              </div>
+              <p class="mx-10 font-poppins">Pour toute questions sur mes projets, ou pour des demandes particulières, n'hésitez pas à me contacter.</p>
             </div>
             <div>
-              <ul class="flex justify-center">
+              <ul class="flex flex-col justify-center">
                 <li><a href="https://www.linkedin.com/in/hugo-beaurain-5473a0224/"><img src="@/assets/LinkedIn_hugo.svg" alt=""><p class="hidden sm:block">LinkedIn</p></a></li>
-                <li><a href=""><img src="@/assets/GitHub.svg" alt=""><p class="hidden sm:block">Github</p> </a></li>
+                <li><a href=""><img src="@/assets/GitHub.svg" alt=""><p class="hidden sm:block">Github</p></a></li>
                 <li><a href=""><img src="" alt=""><p class="hidden sm:block">Twitter</p></a></li>
                 <li><a href=""><img src="@/assets/Instagram_hugo.svg" alt=""><p class="hidden sm:block">Instagram</p></a></li>
               </ul>
