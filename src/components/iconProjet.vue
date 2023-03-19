@@ -8,15 +8,9 @@ defineProps({
 
 <template>
     <div>
-        <KinesisContainer>
-            <KinesisElement
-            :strength="10" 
-            type="depth">
-                <ImgS 
-                class="w-24 h-24 sm:w-64 sm:h-64"
-                bucket="prive-images-maisons"
-                :name="illustration"/>
-            </KinesisElement>
-        </KinesisContainer>
+        <ImgS 
+        class="w-32 h-32 sm:w-64 sm:h-64"
+        bucket="prive-images-maisons"
+        :name="illustration"/>
     </div>
 </template>
