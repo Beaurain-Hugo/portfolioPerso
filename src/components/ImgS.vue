@@ -7,7 +7,7 @@ if (props.public) {
   src.value = supabase.storage
     .from(props.bucket)
     .getPublicUrl(props.name).data.publicUrl;
-  console.log("public :", src.value);
+ // console.log("public :", src.value);
 } else {
   src.value = "dataUriSpinner ?"; // valeur d'attente
   const { data, error } = await supabase.storage
@@ -21,7 +21,7 @@ if (props.public) {
     );
   // src.value = URL.createObjectURL(data);
   src.value = data.signedUrl;
-  console.log(src)
+ // console.log(src)
 }
 </script>
 <template>
