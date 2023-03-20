@@ -33,6 +33,10 @@ defineProps({
         </div>    
         <ImgS v-if="illustration" class="pt-10 w-4/5 sm:w-1/2 m-auto" bucket="prive-images" :name="illustration" />
     </div>
+    <div>
+        <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24 mb-5">Harmonie colorée</h2>
+        <ImgS class="w-1/2 m-auto" v-if="harmonie" bucket="prive-images" :name="harmonie" />
+    </div>
     <div class="py-10">
         <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24">Logiciel(s) utilisé(s)</h2>
         <div class="flex flex-wrap mt-10 items-center gap-10 justify-center">
