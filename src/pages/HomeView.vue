@@ -132,20 +132,20 @@ mounted() {
       <img class="w-1/3 sm:w-1/4  " src="@/assets/wave2.svg" alt="">
       <div class="border-2 border-cyan-500 w-3/4 h-fit m-auto py-5 bg-zinc-700">
         <div class="bg-[url('src/assets/morphCircle.svg')] bg-contain bg-center bg-no-repeat">
-          <div class="flex flex-col sm:flex-row-reverse">
+          <div class="flex flex-col md:flx-row-reverse">
             <div>
               <div class="font-unbounded text-2xl text-center"> 
                 <p>Contactez</p>
                 <p class="test"> moi</p>
               </div>
-              <p class="mx-10 font-poppins">Pour toute questions sur mes projets, ou pour des demandes particulières, n'hésitez pas à me contacter.</p>
+              <p class="mx-10 text-center font-poppins">Pour toute questions sur mes projets, ou pour des demandes particulières, n'hésitez pas à me contacter.</p>
             </div>
             <div>
-              <ul class="flex sm:flex-col justify-center">
-                <li><a href="https://www.linkedin.com/in/hugo-beaurain-5473a0224/"><img src="@/assets/LinkedIn_hugo.svg" alt=""><p class="hidden sm:block">LinkedIn</p></a></li>
-                <li><a href=""><img src="@/assets/GitHub.svg" alt=""><p class="hidden sm:block">Github</p></a></li>
-                <li><a href=""><img src="" alt=""><p class="hidden sm:block">Twitter</p></a></li>
-                <li><a href=""><img src="@/assets/Instagram_hugo.svg" alt=""><p class="hidden sm:block">Instagram</p></a></li>
+              <ul class="flex md:flx-col justify-center">
+                <li><a href="https://www.linkedin.com/in/hugo-beaurain-5473a0224/"><img src="@/assets/LinkedIn_hugo.svg" alt=""><span class="sr-only">LinkedIn</span></a></li>
+                <li><a href=""><img src="@/assets/GitHub.svg" alt=""><span class="sr-only">Github</span></a></li>
+                <li><a href=""><img src="" alt=""><span class="sr-only">Twitter</span></a></li>
+                <li><a href=""><img src="@/assets/Instagram_hugo.svg" alt=""><span class="sr-only">Instagram</span></a></li>
               </ul>
             </div>
           </div>
