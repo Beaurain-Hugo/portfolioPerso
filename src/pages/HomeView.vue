@@ -143,9 +143,7 @@ mounted() {
             <div>
               <ul class="flex justify-center">
                 <li><a href="https://www.linkedin.com/in/hugo-beaurain-5473a0224/"><img src="@/assets/LinkedIn_hugo.svg" alt=""><span class="sr-only">LinkedIn</span></a></li>
-                <li><a href=""><img src="@/assets/GitHub.svg" alt=""><span class="sr-only">Github</span></a></li>
-                <li><a href=""><img src="" alt=""><span class="sr-only">Twitter</span></a></li>
-                <li><a href=""><img src="@/assets/Instagram_hugo.svg" alt=""><span class="sr-only">Instagram</span></a></li>
+                <li><a href="https://github.com/Beaurain-Hugo"><img src="@/assets/GitHub.svg" alt=""><span class="sr-only">Github</span></a></li>
               </ul>
             </div>
           </div>
