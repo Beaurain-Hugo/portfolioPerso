@@ -67,6 +67,12 @@ async function supprimerOffre(dataForm) {
         <FormKit type="hidden" name="id" />
         <FormKit name="title" label="Nom du Projet"/> 
         <FormKit name="slug" label="Slug"/> 
+        <FormKit
+        type="select" 
+        name="categorie"
+        label="Catégorie"
+        :options="['dev','truc', 'design']"
+        placeholder="Choisir une catégorie"/>
         <FormKit :type="imgUploadSupabase" name="illustration" label="Illustration du Projet"/>
         <FormKit name="paragraphe" type="textarea" rows="10" label="Présentation du Projet"/>
         <FormKit :type="imgUploadSupabase" name="harmonie" label="Harmonie colorée"/>
