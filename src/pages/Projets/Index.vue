@@ -48,7 +48,7 @@ const selectDesign = () => {
 
 let {data:projetsDesign} = await selectDesign()
 
-const selectTruc = async() => {
+const selectTruc = () => {
   let projets = getAllProjetsTruc() 
     console.log('Récupération des données de tous les projets dans la vue', projets)
     title.value="Projets truc"
@@ -60,7 +60,7 @@ const selectTruc = async() => {
 
 let {data:projetsTruc} = await selectTruc()
 
-onMounted( async() => {
+onMounted( () => {
   selectProjets()
 })
 

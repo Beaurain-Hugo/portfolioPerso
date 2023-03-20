@@ -46,7 +46,7 @@ const selectTruc = () => {
     trucProjetsVisible.value = true
     }
 
-onMounted( async() => {
+onMounted( () => {
   selectProjets()
 })
 </script>
@@ -100,7 +100,7 @@ mounted() {
     </div>
     <div class="bg-zinc-900 pt-5 sm:pt-10">
       <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly mx-5">
-        <li class="relative"><button class="active" @click="selecAll" href="">Projets récents</button></li>
+        <li class="relative"><button class="active" @click="selectProjets" href="">Projets récents</button></li>
         <li class="relative"><button @click="selectDev" href="">Sites web</button></li>
         <li class="relative"><button @click="selectDesign" href="">Quelque chose</button></li>
         <li class="relative"><button @click="selectTruc" href="">Untruciyvhkv</button></li>
