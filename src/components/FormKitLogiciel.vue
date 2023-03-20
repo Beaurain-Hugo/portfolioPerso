@@ -22,7 +22,7 @@ async function upsertLogiciel(dataForm) {
       error
     );
   } else {
-    router.push({ name: "Logiciels-Logiciel-edit-id", params: { id: data.id } });
+    router.push({ name: "Logiciels-Logiciel-edit-id", params: { id: data.Code_Logiciel } });
   }
 }
 
