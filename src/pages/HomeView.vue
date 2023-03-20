@@ -119,7 +119,7 @@ mounted() {
         <listProjetsTruc class="relative mt-5" :max="9" />
       </div>
       </div>
-      <div class="w-max m-auto bg-sky-500 text-xs sm:text-2xl rounded-xl p-1">
+      <div class="w-max my-5 mx-auto bg-sky-500 text-xs sm:text-2xl rounded-xl p-1">
         <div class="bg-black h-full w-full rounded-lg px-8 py-1">
           <RouterLink to="/projets" class="font-unbounded font-regular ">
             <span>Voir plus</span>
@@ -132,7 +132,7 @@ mounted() {
       <img class="w-1/3 sm:w-1/4  " src="@/assets/wave2.svg" alt="">
       <div class="border-2 border-cyan-500 w-3/4 h-fit m-auto py-5 bg-zinc-700">
         <div class="bg-[url('src/assets/morphCircle.svg')] bg-contain bg-center bg-no-repeat">
-          <div class="flex flex-col md:flx-row-reverse">
+          <div class="flex flex-col">
             <div>
               <div class="font-unbounded text-2xl text-center"> 
                 <p>Contactez</p>
@@ -141,7 +141,7 @@ mounted() {
               <p class="mx-10 text-center font-poppins">Pour toute questions sur mes projets, ou pour des demandes particulières, n'hésitez pas à me contacter.</p>
             </div>
             <div>
-              <ul class="flex md:flx-col justify-center">
+              <ul class="flex justify-center">
                 <li><a href="https://www.linkedin.com/in/hugo-beaurain-5473a0224/"><img src="@/assets/LinkedIn_hugo.svg" alt=""><span class="sr-only">LinkedIn</span></a></li>
                 <li><a href=""><img src="@/assets/GitHub.svg" alt=""><span class="sr-only">Github</span></a></li>
                 <li><a href=""><img src="" alt=""><span class="sr-only">Twitter</span></a></li>
