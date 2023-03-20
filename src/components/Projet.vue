@@ -29,7 +29,7 @@ defineProps({
     <div class="py-10">
         <div class="text-center">
             <h1 class="text-3xl sm:text-8xl font-unbounded">{{ title }}</h1>
-            <h1 class="text-xl sm:text-6xl font-poppins text-cyan-400 test uppercase">Site web</h1>
+            <h1 class="text-xl sm:text-6xl font-poppins text-cyan-400 test uppercase">{{ categorie }}</h1>
         </div>    
         <ImgS v-if="illustration" class="pt-10 w-4/5 sm:w-1/2 m-auto" bucket="prive-images" :name="illustration" />
     </div>
@@ -46,16 +46,16 @@ defineProps({
         <p class="font-unbounded">{{ paragraphe }}</p>
     </div>
     <div class="py-10" v-if="photo1">
-        <h2 class="font-unbounded text-xl my-5">Photos supplémentaires</h2>
-            <div class="flex flex-wrap gap-5 justify-center">
-                <ImgS v-if="photo1" bucket="prive-images" :name="photo1" />
-                <ImgS v-if="photo2" bucket="prive-images" :name="photo2" />
-                <ImgS v-if="photo3" bucket="prive-images" :name="photo3" />
-                <ImgS v-if="photo4" bucket="prive-images" :name="photo4" />
-                <ImgS v-if="photo5" bucket="prive-images" :name="photo5" />
-                <ImgS v-if="photo6" bucket="prive-images" :name="photo6" />
-                <ImgS v-if="photo7" bucket="prive-images" :name="photo7" />
-            </div>
+        <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24">Photos supplémentaires</h2>
+        <div class="flex flex-wrap gap-5 justify-center">
+            <ImgS class="w-1/2" v-if="photo1" bucket="prive-images" :name="photo1" />
+            <ImgS class="w-1/2" v-if="photo2" bucket="prive-images" :name="photo2" />
+            <ImgS class="w-1/2" v-if="photo3" bucket="prive-images" :name="photo3" />
+            <ImgS class="w-1/2" v-if="photo4" bucket="prive-images" :name="photo4" />
+            <ImgS class="w-1/2" v-if="photo5" bucket="prive-images" :name="photo5" />
+            <ImgS class="w-1/2" v-if="photo6" bucket="prive-images" :name="photo6" />
+            <ImgS class="w-1/2" v-if="photo7" bucket="prive-images" :name="photo7" />
+        </div>
     </div>
 </template>
 
