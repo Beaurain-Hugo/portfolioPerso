@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../pages/HomeView.vue'
-import AboutView from '../pages/AboutView.vue'
+import ConnexionView from '../pages/ConnexionView.vue'
 
 import routesFromPages from "~pages"
 
@@ -8,7 +8,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'home', component: HomeView, meta: { title: 'Home Page' } },
-    { path: '/about', name: 'about', component: AboutView, meta: { title: 'About Page' } },
+    { path: '/connexion', name: 'connexionabout', component: ConnexionView, meta: { title: 'Connection Page' } },
   
     ...routesFromPages,
   ]
