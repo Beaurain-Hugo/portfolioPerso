@@ -23,7 +23,7 @@ async function upsertProjet(dataForm) {
       error
     );
   } else {
-    router.push({ name: "Projets-Projet-title", params: { title: offre.title } });
+   router.push({ name: "Projets-Projet-slug", params: { slug: offre.slug } });
   }
 }
 
@@ -61,7 +61,7 @@ async function supprimerOffre(dataForm) {
         wrapperClass: '',
         outerClass: '',
       }"
-        @submit="upsertProjet" 
+        @submit="upsertProjet"
         v-model="offre"
         :submit-label="offre ? 'Mettre à jour projet' : 'Créer nouveau projet'">
         <FormKit type="hidden" name="id" />
