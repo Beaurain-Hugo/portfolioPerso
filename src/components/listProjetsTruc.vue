@@ -19,7 +19,7 @@ let {data:projets, error} = await supabase
     <div class="carousel sm:flex-wrap sm:justify-center gap-5">
           <iconProjet class="carousel-item" 
           v-for="projet in projets" :key="projet.id" v-bind="projet" 
-          @click=" $router.push({ name: 'Projets-Projet-title', params: { title: projet.title } })" />
+          @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" />
     </div>
 
 </template>
