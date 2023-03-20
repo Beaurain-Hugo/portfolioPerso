@@ -52,7 +52,7 @@ async function supprimerLogiciel(dataForm) {
       }"
         @submit="upsertLogiciel" 
         v-model="offre"
-        :submit-label="'Créer nouveau logiciel'">
+        :submit-label="'Envoyer'">
         <FormKit type="hidden" name="Code_Logiciel" />
         <FormKit name="libelle" label="Nom du logiciel"/>
         <FormKit :type="imgUploadSupabase" name="logo" label="Logo du logiciel"/>

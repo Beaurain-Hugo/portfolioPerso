@@ -63,7 +63,7 @@ async function supprimerOffre(dataForm) {
       }"
         @submit="upsertProjet"
         v-model="offre"
-        :submit-label="offre ? 'Mettre à jour projet' : 'Créer nouveau projet'">
+        :submit-label="'Envoyer'">
         <FormKit type="hidden" name="id" />
         <FormKit name="title" label="Nom du Projet"/> 
         <FormKit name="slug" label="Slug"/> 
