@@ -103,7 +103,7 @@ mounted() {
         <li class="relative"><button class="active" @click="selectProjets" href="">Projets récents</button></li>
         <li class="relative"><button @click="selectDev" href="">Sites web</button></li>
         <li class="relative"><button @click="selectDesign" href="">Créations graphiques</button></li>
-        <li class="relative"><button @click="selectTruc" href="">Untruciyvhkv</button></li>
+       <!-- <li class="relative"><button @click="selectTruc" href="">Untruciyvhkv</button></li>-->
       </ul>
       <div>
       <div v-show="allProjetsVisible">
