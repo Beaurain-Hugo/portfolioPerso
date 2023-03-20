@@ -13,16 +13,16 @@ const menuOuvert = ref(false)
       <RouterLink to="/">
         <img alt="Logo" class="logo" src="@/assets/logo.svg" width="50"/>
       </RouterLink>
-      <div class="hidden sm:flex items-center gap-10">
+      <div class="hidden sm:flex items-center gap-5">
         <RouterLink class="active:text-cyan-400" to="/projets">Projets</RouterLink>
         <a class="active:text-cyan-400" href="/#contact">Contact</a>
         <div v-if="user" class="dropdown">
           <label tabindex="0" class="btn m-1">Menu admin</label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-gray-900 rounded-box w-52">
-              <li><RouterLink to="/connexion">Compte</RouterLink></li>
-              <li><RouterLink to="/newprojet">Ajout de projet</RouterLink></li>
-              <li><RouterLink to="/newlogiciel">Ajout de logiciel </RouterLink></li>
-              <li><RouterLink to="/logiciels">Modification de logiciel </RouterLink></li>
+              <li><RouterLink class="text-lg" to="/connexion">Compte</RouterLink></li>
+              <li><RouterLink class="text-lg" to="/newprojet">Ajout de projet</RouterLink></li>
+              <li><RouterLink class="text-lg" to="/newlogiciel">Ajout de logiciel </RouterLink></li>
+              <li><RouterLink class="text-lg" to="/logiciels">Modification de logiciel </RouterLink></li>
             </ul>
         </div>
       </div>
