@@ -46,7 +46,7 @@ async function supprimerOffre(dataForm) {
   if (error) {
     console.error("Erreur à la suppression de ", offre, "erreur :", error);
   } else {
-    router.push("/newprojet");
+    router.push("/Projets/NewView");
   }
 }
 </script>
