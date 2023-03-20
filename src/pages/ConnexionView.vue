@@ -8,21 +8,21 @@ async function connexion(data, node) {
     console.error(error);
     node.setErrors([error.message]);
   }
-}
-const nvlUtilisateur = ref(false);
-console.log("test", user)
+}console.log("test", user)
 
 </script>
 
 <template>
-  <div class="about bg-zinc-400">
-    <h1>This is an about page</h1>
+  <div class="text-center my-52">
     <button v-if="user" @pointerdown="supabase.auth.signOut()">
         Se déconnecter ({{user.email}})
     </button>
     <FormKit
     v-else
     type="form" 
+    :config="{ classes:{input:'text-black'}}"
+    :submit-attrs="{
+        inputClass: 'text-white'}"
     :submit-label="'Se connecter'"
       @submit="connexion">
       <FormKit name="email" label="mail" type="email" />
@@ -33,12 +33,4 @@ console.log("test", user)
   
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+
