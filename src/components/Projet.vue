@@ -26,26 +26,26 @@ defineProps({
 </script>
 
 <template>
-    <div>
+    <div class="py-10">
         <div class="text-center">
             <h1 class="text-3xl sm:text-8xl font-unbounded">{{ title }}</h1>
-            <h1 class="text-xl sm:text-6xl font-poppins text-cyan-400 test">{{ categorie }}</h1>
+            <h1 class="text-xl sm:text-6xl font-poppins text-cyan-400 test uppercase">Site web</h1>
         </div>    
-        <ImgS v-if="illustration" class="w-4/5 sm:w-1/2 m-auto" bucket="prive-images" :name="illustration" />
+        <ImgS v-if="illustration" class="pt-10 w-4/5 sm:w-1/2 m-auto" bucket="prive-images" :name="illustration" />
     </div>
-    <div class="my-5">
-        <h2 class="font-unbounded font-medium text-2xl">Logiciel(s) utilisé(s)</h2>
-        <div>
-            <ImgS v-if="logiciel1" bucket="prive-images" :name="logiciel1" />
-            <ImgS v-if="logiciel2" bucket="prive-images" :name="logiciel2" />
-            <ImgS v-if="logiciel3" bucket="prive-images" :name="logiciel3" />
-            <ImgS v-if="logiciel4" bucket="prive-images" :name="logiciel4" />
+    <div class="py-10">
+        <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24">Logiciel(s) utilisé(s)</h2>
+        <div class="flex flex-wrap mt-10 items-center gap-10 justify-center">
+            <ImgS class="h-20" v-if="logiciel1" bucket="prive-images" :name="logiciel1" />
+            <ImgS class="h-20" v-if="logiciel2" bucket="prive-images" :name="logiciel2" />
+            <ImgS class="h-20" v-if="logiciel3" bucket="prive-images" :name="logiciel3" />
+            <ImgS class="h-20" v-if="logiciel4" bucket="prive-images" :name="logiciel4" />
         </div>
     </div>
-    <div>
+    <div class="py-10 sm:text-lg mx-8 sm:mx-24">
         <p class="font-unbounded">{{ paragraphe }}</p>
     </div>
-    <div>
+    <div class="py-10" v-if="photo1">
         <h2 class="font-unbounded text-xl my-5">Photos supplémentaires</h2>
             <div class="flex flex-wrap gap-5 justify-center">
                 <ImgS v-if="photo1" bucket="prive-images" :name="photo1" />
@@ -64,7 +64,7 @@ defineProps({
   display:inline-block;
   vertical-align: middle;
   height:2px;
-  width:66%;
+  width:50%;
   content:"";
   background:rgb(34 211 238)
 }
