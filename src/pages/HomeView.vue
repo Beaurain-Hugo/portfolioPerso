@@ -141,7 +141,7 @@ mounted() {
               <p class="mx-10 font-poppins">Pour toute questions sur mes projets, ou pour des demandes particulières, n'hésitez pas à me contacter.</p>
             </div>
             <div>
-              <ul class="flex flex-col justify-center">
+              <ul class="flex sm:flex-col justify-center">
                 <li><a href="https://www.linkedin.com/in/hugo-beaurain-5473a0224/"><img src="@/assets/LinkedIn_hugo.svg" alt=""><p class="hidden sm:block">LinkedIn</p></a></li>
                 <li><a href=""><img src="@/assets/GitHub.svg" alt=""><p class="hidden sm:block">Github</p></a></li>
                 <li><a href=""><img src="" alt=""><p class="hidden sm:block">Twitter</p></a></li>
