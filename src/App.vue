@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/vue/20/solid";
+//import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/vue/20/solid";
 import { ref } from 'vue'
 import {user} from '@/supabase'
 
@@ -9,7 +9,7 @@ const menuOuvert = ref(false)
 
 <template>
 <header class="bg-black py-2">
-    <nav class="flex justify-between px-20 font-unbounded text-3xl">
+    <nav class="flex justify-between px-5 sm:px-20 font-unbounded text-3xl">
       <RouterLink to="/">
         <img alt="Logo" class="logo" src="@/assets/logo.svg" width="50"/>
       </RouterLink>
@@ -32,8 +32,8 @@ const menuOuvert = ref(false)
         :aria-expanded="menuOuvert"
         @click="menuOuvert = !menuOuvert"
         >
-        <Bars3BottomLeftIcon class="text-white bg-white"/>
-        <span class="sr-only">Menu</span>
+        <img src="@/assets/menu.svg" alt="">
+        <span class="sr-only">Menu</span> 
       </button>  
     </nav>
     <div 
@@ -55,7 +55,6 @@ const menuOuvert = ref(false)
         aria-controls="menu"
         :aria-expanded="menuOuvert"
         @click="menuOuvert = !menuOuvert">
-          <XMarkIcon />
         <span class="sr-only">Fermer menu</span> 
       </button> 
       <nav class="font-unbounded flex flex-col items-center border-t-8 border-red-500">
