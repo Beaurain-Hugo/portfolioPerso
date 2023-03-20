@@ -71,7 +71,7 @@ async function supprimerOffre(dataForm) {
         type="select" 
         name="categorie"
         label="Catégorie"
-        :options="['dev','truc', 'design']"
+        :options="['dev','design']"
         placeholder="Choisir une catégorie"/>
         <FormKit :type="imgUploadSupabase" name="illustration" label="Illustration du Projet"/>
         <FormKit name="paragraphe" type="textarea" rows="10" label="Présentation du Projet"/>
