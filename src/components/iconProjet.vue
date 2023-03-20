@@ -10,7 +10,7 @@ defineProps({
     <div>
         <ImgS 
         class="w-32 h-32 sm:w-64 sm:h-64"
-        bucket="prive-images-maisons"
+        bucket="prive-images"
         :name="illustration"/>
     </div>
 </template>
