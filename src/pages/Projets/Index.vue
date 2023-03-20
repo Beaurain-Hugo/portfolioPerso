@@ -26,7 +26,7 @@ let {data:projets} = await selectProjets()
 const selectDev = () => {
   let projets = getAllProjetsDev() 
     console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Projets dev"
+    title.value="Sites web"
     allProjetsVisible.value = false
     designProjetsVisible.value = false
     trucProjetsVisible.value = false
@@ -39,7 +39,7 @@ let {data:projetsDev} = await selectDev()
 const selectDesign = () => {
   let projets = getAllProjetsDesign() 
     console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Projets designs"
+    title.value="Créations graphiques"
     allProjetsVisible.value = false 
      allProjetsVisible.value = false
      devProjetsVisible.value = false
@@ -122,7 +122,7 @@ mounted() {
           </button>
           <iconProjet 
             v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-title', params: { title: projet.title } })" 
+            @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" 
           />
       </div>
     </div>
@@ -137,7 +137,7 @@ mounted() {
           </button>
           <iconProjet 
             v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-title', params: { title: projet.title } })" 
+            @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" 
           />
       </div>
     </div>
@@ -152,7 +152,7 @@ mounted() {
           </button>
           <iconProjet 
             v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-title', params: { title: projet.title } })" 
+            @click=" $router.push({ name: 'Projets-Projet-title', params: { slug: projet.slug } })" 
           />
       </div>
     </div>
