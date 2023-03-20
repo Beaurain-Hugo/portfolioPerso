@@ -77,24 +77,24 @@ mounted() {
         <h2 class="font-poppins text-xl sm:text-3xl">Développeur</h2>
       </div>
       <hr class="bg-cyan-400 h-1 w-1/2 sm:w-1/4 border-t-0 my-8">
-      <div class="sm:flex">
+      <div class="md:flex">
         <div class="font-poppins text-sm sm:text-xl">
           <p>Je m'appelle Hugo Beaurain et j'ai 20 ans. Je suis passionné par le <strong class="text-cyan-400">développement web</strong> et je passe beaucoup de temps à apprendre et à mettre en pratique mes compétences en <strong class="text-cyan-400">programmation</strong>.</p>
           <p class="mt-8">Je m'intéresse aussi à la conception web et à la création de sites web. La satisfaction que je tire de la création de quelque chose de nouveau me fascine.</p>
-          <img class="hidden sm:block sm:m-auto" src="@/assets/double_fleche.svg" alt="">
+          <img class="hidden md:block md:m-auto" src="@/assets/double_fleche.svg" alt="">
          <!-- <div>
             <ChevronDownIcon class="" />
             <ChevronDownIcon class=""/>
           </div>-->
         </div>
-        <div class="flex sm:flex-col mr-0 sm:-mt-10">
+        <div class="flex md:flex-col mr-0 md:-mt-10">
           <!-- <div>
             <ChevronDownIcon class="" />
             <ChevronDownIcon class=""/>
           </div>-->
-          <img class="block sm:hidden m-auto" src="@/assets/double_fleche.svg" alt="">
+          <img class="block md:hidden m-auto" src="@/assets/double_fleche.svg" alt="">
           <div class="z-0 w-36 h-36 sm:w-96 sm:h-96 block bg-cyan-500 rounded-full blur-3xl opacity-60"></div>
-          <img class="relative w-1/2 mr-0 sm:w-full sm:-mt-96" src="@/assets/photo_hugo.webp" alt="">
+          <img class="relative w-1/2 mr-0 md:w-full md:-mt-96" src="@/assets/photo_hugo.webp" alt="">
         </div>
       </div>
     </div>
