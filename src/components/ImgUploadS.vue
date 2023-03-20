@@ -11,7 +11,7 @@ const image = ref(props.context._value);
 
 async function supprimeImage() {
   const { data, error } = await supabase.storage
-    .from("prive-images-maisons")
+    .from("prive-images")
     .remove([image.value]);
   if (error) {
     console.error(
@@ -27,7 +27,7 @@ async function supprimeImage() {
 async function ajouterImage(evt) {
   const file = evt.target.children.fichier.files[0];
   const { data, error } = await supabase.storage
-    .from("prive-images-logiciels")
+    .from("prive-images")
     .upload(file.name, file, {
       cacheControl: "3600",
       upsert: false,
@@ -45,7 +45,7 @@ async function ajouterImage(evt) {
   <div v-if="image">
     <ImgS
       class="rounded-t-lg object-cover"
-      bucket="prive-images-logiciels"
+      bucket="prive-images"
       :name="image"
     />
     <button
