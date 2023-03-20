@@ -55,7 +55,7 @@ async function supprimerOffre(dataForm) {
     <FormKit
         id="form"
         type="form" 
-        :config="{ classes:{input:'text-black', actions: 'justify-self-end', form: '$reset grid grid-cols-1 gap-2', }}"
+        :config="{ classes:{input:'text-black w-3/4', actions: 'justify-self-end', form: '$reset grid grid-cols-1 gap-2' }}"
         :submit-attrs="{
         inputClass: 'rounded-md shadow-sm focus-style p-2 bg-blue-300 ',
         wrapperClass: '',
@@ -66,38 +66,34 @@ async function supprimerOffre(dataForm) {
         :submit-label="offre ? 'Mettre à jour projet' : 'Créer nouveau projet'">
         <FormKit type="hidden" name="id" />
         <FormKit name="title" label="Nom du Projet"/> 
-        <FormKit name="extract" label="Extrait du Projet"/> 
+        <FormKit name="slug" label="Slug"/> 
         <FormKit :type="imgUploadSupabase" name="illustration" label="Illustration du Projet"/>
-        <FormKit name="paragraphe" label="Présentation du Projet"/>
+        <FormKit name="paragraphe" type="textarea" rows="10" label="Présentation du Projet"/>
+        <FormKit :type="imgUploadSupabase" name="illustration" label="Harmonie colorée"/>
         <FormKit
         type="select"
         name="logiciel1"
         label="Logiciel"
-        :options="optionsLogiciel">
-        </FormKit>
+        :options="optionsLogiciel"
+        placeholder="Choisir un logiciel"/>
         <FormKit
         type="select"
         name="logiciel2"
         label="Logiciel"
         :options="optionsLogiciel"
-        placeholder="Select a planet"/>
+        placeholder="Choisir un logiciel"/>
         <FormKit
         type="select"
         name="logiciel3"
         label="Logiciel"
-        :options="optionsLogiciel">
-        </FormKit>
+        :options="optionsLogiciel"
+        placeholder="Choisir un logiciel"/>
         <FormKit
         type="select"
         name="logiciel4"
         label="Logiciel"
         :options="optionsLogiciel"
-        placeholder="Select a planet"
-        >
-        <!--<option value="" :disabled="true">Choisir un logiciel</option>
-        <optgroup><option :options="optionsLogiciel">{{ optionsLogiciel.label }}</option></optgroup>-->
-        
-        </FormKit>
+        placeholder="Choisir un logiciel"/> 
         <FormKit :type="imgUploadSupabase" name="photo1" label="Photos du Projet"/>
         <FormKit :type="imgUploadSupabase" name="photo2"/>
         <FormKit :type="imgUploadSupabase" name="photo3"/>
