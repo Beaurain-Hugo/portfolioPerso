@@ -102,7 +102,7 @@ mounted() {
       <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly mx-5">
         <li class="relative"><button class="active" @click="selectProjets" href="">Projets récents</button></li>
         <li class="relative"><button @click="selectDev" href="">Sites web</button></li>
-        <li class="relative"><button @click="selectDesign" href="">Quelque chose</button></li>
+        <li class="relative"><button @click="selectDesign" href="">Créations graphiques</button></li>
         <li class="relative"><button @click="selectTruc" href="">Untruciyvhkv</button></li>
       </ul>
       <div>

@@ -87,12 +87,12 @@ mounted() {
   <main class="bg-zinc-900">
     <div class="text-4xl flex flex-col text-center">
       <h1 class="font-unbounded">Projets</h1>
-      <h1 class="font-unbounded">{{ title }}</h1>
+      <h1 class="font-unbounded mt-3">{{ title }}</h1>
 
-      <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly mx-5">
+      <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly m-5">
         <li class="relative"><button class="active" @click="selectProjets" href="#">Tous mes projets</button></li>
         <li class="relative"><button @click="selectDev" href="#">Sites web</button></li>
-        <li class="relative"><button @click="selectDesign" href="#">Quelque chose</button></li>
+        <li class="relative"><button @click="selectDesign" href="#">Créations graphiques</button></li>
         <li class="relative"><button @click="selectTruc" href="#">Untruciyvhkv</button></li>
       </ul>
     </div>
