@@ -107,7 +107,7 @@ mounted() {
           </button>
           <iconProjet 
             v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-title', params: { title: projet.title } })" 
+            @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" 
           />
       </div>
     </div>
