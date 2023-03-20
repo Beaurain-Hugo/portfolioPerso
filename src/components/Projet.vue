@@ -47,7 +47,7 @@ defineProps({
     </div>
     <div class="py-10" v-if="photo1">
         <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24">Photos supplémentaires</h2>
-        <div class="flex flex-wrap gap-5 justify-center">
+        <div class="flex mt-5 flex-wrap gap-5 justify-center">
             <ImgS class="w-1/2" v-if="photo1" bucket="prive-images" :name="photo1" />
             <ImgS class="w-1/2" v-if="photo2" bucket="prive-images" :name="photo2" />
             <ImgS class="w-1/2" v-if="photo3" bucket="prive-images" :name="photo3" />
