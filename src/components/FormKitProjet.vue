@@ -69,7 +69,7 @@ async function supprimerOffre(dataForm) {
         <FormKit name="slug" label="Slug"/> 
         <FormKit :type="imgUploadSupabase" name="illustration" label="Illustration du Projet"/>
         <FormKit name="paragraphe" type="textarea" rows="10" label="Présentation du Projet"/>
-        <FormKit :type="imgUploadSupabase" name="illustration" label="Harmonie colorée"/>
+        <FormKit :type="imgUploadSupabase" name="harmonie" label="Harmonie colorée"/>
         <FormKit
         type="select"
         name="logiciel1"
