@@ -17,12 +17,12 @@ const menuOuvert = ref(false)
         <RouterLink class="active:text-cyan-400" to="/projets">Projets</RouterLink>
         <a class="active:text-cyan-400" href="/#contact">Contact</a>
         <div v-if="user" class="dropdown">
-          <label tabindex="0" class="btn m-1">Menu admin</label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-gray-900 rounded-box w-52">
-              <li><RouterLink class="text-lg" to="/connexion">Compte</RouterLink></li>
-              <li><RouterLink class="text-lg" to="/newprojet">Ajout de projet</RouterLink></li>
-              <li><RouterLink class="text-lg" to="/newlogiciel">Ajout de logiciel </RouterLink></li>
-              <li><RouterLink class="text-lg" to="/logiciels">Modification de logiciel </RouterLink></li>
+          <label tabindex="0" class="btn bg-cyan-400 hover:bg-cyan-800 m-1">Menu admin</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-black  rounded-box w-52">
+              <li><RouterLink class="text-lg hover:bg-gray-800" to="/connexion">Compte</RouterLink></li>
+              <li><RouterLink class="text-lg hover:bg-gray-800" to="/Projets/NewView">Ajout de projet</RouterLink></li>
+              <li><RouterLink class="text-lg hover:bg-gray-800" to="/Logiciels/NewView">Ajout de logiciel </RouterLink></li>
+              <li><RouterLink class="text-lg hover:bg-gray-800" to="/logiciels">Modification de logiciel </RouterLink></li>
             </ul>
         </div>
       </div>
