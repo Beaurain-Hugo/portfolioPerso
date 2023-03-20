@@ -1,6 +1,6 @@
 import {supabase} from '@/supabase'
 import {ref} from 'vue'
-let projets = await supabase 
+let projets = supabase 
 .from('Projets')
 .select('*')
 console.log('Appel à tous les projets', projets)
