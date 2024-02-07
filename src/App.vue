@@ -22,7 +22,9 @@ const menuOuvert = ref(false)
               <li><RouterLink class="text-lg hover:bg-gray-800" to="/connexion">Compte</RouterLink></li>
               <li><RouterLink class="text-lg hover:bg-gray-800" to="/Projets/NewView">Ajout de projet</RouterLink></li>
               <li><RouterLink class="text-lg hover:bg-gray-800" to="/Logiciels/NewView">Ajout de logiciel </RouterLink></li>
+              <li><RouterLink class="text-lg hover:bg-gray-800" to="/langages/NewView">Ajout de langage </RouterLink></li>
               <li><RouterLink class="text-lg hover:bg-gray-800" to="/logiciels">Modification de logiciel </RouterLink></li>
+              <li><RouterLink class="text-lg hover:bg-gray-800" to="/langages">Modification de langage </RouterLink></li>
             </ul>
         </div>
       </div>

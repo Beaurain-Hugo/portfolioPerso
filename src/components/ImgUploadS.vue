@@ -2,17 +2,18 @@
 import { ref } from "vue";
 import { supabase } from "../supabase";
 import ImgS from "./ImgS.vue";
-
 const props = defineProps({
   context: Object,
 });
 
 const image = ref(props.context._value);
+console.log(props.context._value)
+console.log(image.value)
 
 async function supprimeImage() {
   const { data, error } = await supabase.storage
     .from("prive-images")
-    .remove([image.value]);
+    .remove([`${image.value}`]);
   if (error) {
     console.error(
       "Impossible de supprimer l'image : ",
@@ -27,7 +28,7 @@ async function supprimeImage() {
 async function ajouterImage(evt) {
   const file = evt.target.children.fichier.files[0];
   const { data, error } = await supabase.storage
-    .from("prive-images")
+    .from("prive-images") 
     .upload(file.name, file, {
       cacheControl: "3600",
       upsert: false,
@@ -54,6 +55,14 @@ async function ajouterImage(evt) {
     >
       Supprimer l'image
     </button>
+      <!-- <form @submit.prevent="supprimeImage">
+        <button
+          type="submit"
+          class="bg-red-500 rounded-lg p-2 mt-2 ml-auto block"
+        >
+        Supprimer l'image
+        </button>
+      </form> -->
   </div>
   <div v-else>
     <form @submit.prevent="ajouterImage">

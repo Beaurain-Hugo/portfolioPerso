@@ -5,10 +5,10 @@ import {ref, onMounted} from 'vue';
 import {getAllProjets, getAllProjetsDev, getAllProjetsDesign, getAllProjetsTruc} from '@/composables/jsp.js';
 
 const title = ref()
-const allProjetsVisible = ref(true)
-const devProjetsVisible = ref(false)
-const designProjetsVisible = ref(false)
-const trucProjetsVisible = ref(false)
+  const allProjetsVisible = ref(true)
+  const devProjetsVisible = ref(false)
+  const designProjetsVisible = ref(false)
+  const trucProjetsVisible = ref(false)
 
 const selectProjets = () => {
     let projets = getAllProjets() 
@@ -26,7 +26,7 @@ let {data:projets} = await selectProjets()
 const selectDev = () => {
   let projets = getAllProjetsDev() 
     console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Sites web"
+    title.value="Projets Universitaires"
     allProjetsVisible.value = false
     designProjetsVisible.value = false
     trucProjetsVisible.value = false
@@ -39,7 +39,7 @@ let {data:projetsDev} = await selectDev()
 const selectDesign = () => {
   let projets = getAllProjetsDesign() 
     console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Créations graphiques"
+    title.value="Projets Clients"
     allProjetsVisible.value = false 
      allProjetsVisible.value = false
      devProjetsVisible.value = false
@@ -90,9 +90,9 @@ mounted() {
       <h1 class="font-unbounded mt-3">{{ title }}</h1>
 
       <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly m-5">
-        <li class="relative"><button class="active" @click="selectProjets" href="#">Tous mes projets</button></li>
-        <li class="relative"><button @click="selectDev" href="#">Sites web</button></li>
-        <li class="relative"><button @click="selectDesign" href="#">Créations graphiques</button></li>
+        <li class="relative"><button class="active" @click="selectProjets">Tous mes projets</button></li>
+        <li class="relative"><button @click="selectDev">Projets universitaires</button></li>
+        <li class="relative"><button @click="selectDesign">Projets Clients</button></li>
        <!-- <li class="relative"><button @click="selectTruc" href="#">Untruciyvhkv</button></li>-->
       </ul>
     </div>

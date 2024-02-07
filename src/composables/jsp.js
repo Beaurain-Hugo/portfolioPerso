@@ -3,16 +3,17 @@ import {ref} from 'vue'
 let projets = supabase 
 .from('Projets')
 .select('*')
+.eq("visible", true)
 console.log('Appel à tous les projets', projets)
 
 
 let dev = supabase 
-.from('projetdev')
+.from('projetuniversitaire')
 .select('*')
 console.log('Appel à tous les projets de dev', dev)
 
 let design = supabase 
-.from('projetdesign')
+.from('projetclient')
 .select('*')
 console.log('Appel à tous les projets de dev', design)
 

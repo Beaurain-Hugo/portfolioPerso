@@ -6,7 +6,7 @@ const props = defineProps({max: Number})
 
 
 let {data:projets, error} = await supabase
-  .from('projetdev')
+  .from('projetuniversitaire')
   .select('*')
   .limit(props.max ?? 10000)
 

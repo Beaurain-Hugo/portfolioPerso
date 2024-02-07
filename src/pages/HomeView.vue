@@ -79,7 +79,7 @@ mounted() {
       <hr class="bg-cyan-400 h-1 w-1/2 sm:w-1/4 border-t-0 my-8">
       <div class="md:flex">
         <div class="font-poppins text-sm sm:text-xl">
-          <p>Je m'appelle Hugo Beaurain et j'ai 20 ans. Je suis passionné par le <strong class="text-cyan-400">développement web</strong> et je passe beaucoup de temps à apprendre et à mettre en pratique mes compétences en <strong class="text-cyan-400">programmation</strong>.</p>
+          <p>Je m'appelle Hugo Beaurain et j'ai 21 ans. Je suis passionné par le <strong class="text-cyan-400">développement web</strong> et je passe beaucoup de temps à apprendre et à mettre en pratique mes compétences en <strong class="text-cyan-400">programmation</strong>.</p>
           <p class="mt-8">Je m'intéresse aussi à la conception web et à la création de sites web. La satisfaction que je tire de la création de quelque chose de nouveau me fascine.</p>
           <img class="hidden md:block md:m-auto" src="@/assets/double_fleche.svg" alt="">
          <!-- <div>
@@ -101,9 +101,8 @@ mounted() {
     <div class="bg-zinc-900 pt-5 sm:pt-10">
       <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly mx-5">
         <li class="relative"><button class="active" @click="selectProjets" href="">Projets récents</button></li>
-        <li class="relative"><button @click="selectDev" href="">Sites web</button></li>
-        <li class="relative"><button @click="selectDesign" href="">Créations graphiques</button></li>
-       <!-- <li class="relative"><button @click="selectTruc" href="">Untruciyvhkv</button></li>-->
+        <li class="relative"><button @click="selectDev">Projets universitaires</button></li>
+        <li class="relative"><button @click="selectDesign">Projets clients</button></li>
       </ul>
       <div>
       <div v-show="allProjetsVisible">
@@ -123,14 +122,14 @@ mounted() {
         <div class="bg-black h-full w-full rounded-lg px-8 py-1">
           <RouterLink to="/projets" class="font-unbounded font-regular ">
             <span>Voir plus</span>
-          </RouterLink>  
+          </RouterLink>
         </div>    
       </div>
       <img class="-mt-10 w-1/2 sm:w-1/4" src="@/assets/wave1.svg" alt="">
     </div>
-    <div class="bg-zinc-900 pb-10">
-      <img class="w-1/3 sm:w-1/4  " src="@/assets/wave2.svg" alt="">
-      <div class="border-2 border-cyan-500 w-3/4 h-fit m-auto py-5 bg-zinc-700">
+    <div class="bg-zinc-900 pb-10 relative">
+      <img class="w-1/3 sm:w-1/4" src="@/assets/wave2.svg" alt="">  
+      <div class="border-2 border-cyan-500 w-3/4 h-fit m-auto py-5 bg-zinc-700 absolute top-0 left-1/2 -translate-x-1/2">
         <div id="contact" class="bg-[url('src/assets/morphCircle.svg')] bg-contain bg-center bg-no-repeat">
           <div class="flex flex-col">
             <div>
