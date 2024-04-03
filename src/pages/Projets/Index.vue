@@ -47,7 +47,6 @@ const selectDesign = () => {
     return(projets)}
 
 let {data:projetsDesign} = await selectDesign()
-
 const selectTruc = () => {
   let projets = getAllProjetsTruc() 
     console.log('Récupération des données de tous les projets dans la vue', projets)
@@ -127,7 +126,7 @@ mounted() {
       </div>
     </div>
     <div v-show="designProjetsVisible" class="flex justify-center flex-wrap gap-2">
-      <div v-for="projet in projetsDesign" :key="projet.id"
+      <div v-if="projetsDesign.length > 1"  v-for="projet in projetsDesign" :key="projet.id"
       class="relative group">
           <button 
             v-if="user" 
@@ -140,7 +139,11 @@ mounted() {
             @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" 
           />
       </div>
+      <div v-else class="flex justify-center">
+      <p>Bientôt.</p>
     </div>
+    </div>
+    
     <div v-show="trucProjetsVisible" class="flex justify-center flex-wrap gap-2">
       <div v-for="projet in projetsTruc" :key="projet.id"
       class="relative group">
