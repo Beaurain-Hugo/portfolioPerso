@@ -8,7 +8,7 @@ async function connexion(data, node) {
     console.error(error);
     node.setErrors([error.message]);
   }
-}console.log("test", user)
+} 
 
 </script>
 
@@ -20,7 +20,7 @@ async function connexion(data, node) {
     <FormKit
     v-else
     type="form" 
-    :config="{ classes:{input:'text-black'}}"
+    :config="{ classes:{input:'text-black' } }"
     :submit-attrs="{
         inputClass: 'text-white'}"
     :submit-label="'Se connecter'"

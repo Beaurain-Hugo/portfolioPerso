@@ -9,7 +9,6 @@ let {data:projets, error} = await supabase
   .from('projetuniversitaire')
   .select('*')
   .limit(props.max ?? 10000)
-
 </script>
 
 
