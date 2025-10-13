@@ -82,18 +82,10 @@ mounted() {
           <p>Je m'appelle Hugo Beaurain et j'ai 21 ans. Je suis passionné par le <strong class="text-cyan-400">développement web</strong> et je passe beaucoup de temps à apprendre et à mettre en pratique mes compétences en <strong class="text-cyan-400">programmation</strong>.</p>
           <p class="mt-8">Je m'intéresse aussi à la conception web et à la création de sites web. La satisfaction que je tire de la création de quelque chose de nouveau me fascine.</p>
           <img class="hidden md:block md:m-auto" src="@/assets/double_fleche.svg" alt="">
-         <!-- <div>
-            <ChevronDownIcon class="" />
-            <ChevronDownIcon class=""/>
-          </div>-->
         </div>
         <div class="flex md:flex-col mr-0 md:-mt-10">
-          <!-- <div>
-            <ChevronDownIcon class="" />
-            <ChevronDownIcon class=""/>
-          </div>-->
           <img class="block md:hidden m-auto" src="@/assets/double_fleche.svg" alt="">
-          <div class="z-0 w-36 h-36 sm:w-96 sm:h-96 block bg-cyan-500 rounded-full blur-3xl opacity-60"></div>
+          <div class="hidden md:block z-0 w-36 h-36 sm:w-96 sm:h-96 bg-cyan-500 rounded-full blur-3xl opacity-60"></div>
           <img class="relative w-1/2 mr-0 md:w-full md:-mt-96" src="@/assets/photo_hugo.webp" alt="">
         </div>
       </div>
