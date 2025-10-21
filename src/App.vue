@@ -11,7 +11,7 @@ const menuOuvert = ref(false);
   <header class="bg-black py-2">
     <nav class="flex justify-between px-5 sm:px-20 font-unbounded text-3xl">
       <RouterLink to="/">
-        <img alt="Logo" class="logo" src="@/assets/logo.svg" width="50" />
+        <img alt="Logo" class="logo" src="/logo.svg" width="50" />
       </RouterLink>
       <div class="hidden sm:flex items-center gap-5">
         <RouterLink class="active:text-cyan-400" to="/projets"
