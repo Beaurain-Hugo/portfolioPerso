@@ -75,17 +75,17 @@ mounted() {
 
 
 <template>
-  <main class="">
-    <div class="bg-black ml-5 sm:ml-10 pt-10">
-      <div class="flex flex-col-reverse pt-5">
+  <main>
+    <div class="bg-black pt-10">
+      <div class="flex flex-col-reverse pt-5  ml-5 sm:ml-10 ">
         <h1 class="font-unbounded text-3xl sm:text-6xl pt-5">Hugo Beaurain</h1>
         <h2 class="font-poppins text-xl sm:text-3xl">Développeur web</h2>
       </div>
-      <hr class="bg-cyan-400 h-1 w-1/2 sm:w-1/4 border-t-0 my-8">
-      <div class="md:flex">
-        <div class="font-poppins text-sm sm:text-xl">
-          <p>Je suis Hugo Beaurain, étudiant en deuxième année du <a class="underline" href="https://stgi.umlp.fr/formation/master-psm/"> master Technologie de l'Information « Produits et Services Multimédias »</a> à Montbéliard. Avant ça, je suis passé par le BUT MMI de Montbéliard dans la spécialité "Développement web et dispositifs interactifs" ; c'est ici que j'ai découvert le développement web et que j'ai décidé d'en faire mon métier !</p>
-          <p class="mt-5">Le développement web n'est pas ma seule passion, loin de là ! Je suis quelqu'un qui aime toucher à tout</p>
+      <hr class="bg-cyan-400 h-1 w-1/2 sm:w-1/4 border-t-0 my-8 ml-5 sm:ml-10 ">
+      <div class="md:flex ml-5 sm:ml-10 ">
+        <div class="font-poppins text-sm sm:text-xl mr-8">
+          <p>Je suis Hugo Beaurain, étudiant en deuxième année du <a class="underline" target="_blank" href="https://stgi.umlp.fr/formation/master-psm/"> master Technologie de l'Information « Produits et Services Multimédias »</a> à Montbéliard. Avant ça, je suis passé par le BUT MMI de Montbéliard dans la spécialité "Développement web et dispositifs interactifs" ; c'est ici que j'ai découvert le développement web et que j'ai décidé d'en faire mon métier !</p>
+          <p class="mt-5">Le <strong class="text-cyan-400">développement web</strong> n'est pas ma seule passion, loin de là ! Je suis quelqu'un qui aime toucher à tout, surtout dans le monde du numérique. Depuis 5 ans, je m'investis au sein d'<a class="underline" target="_blank" href="https://linktr.ee/exalty_fr">Exalty</a>, une association esport, en tant que <strong class="text-cyan-400">community manager</strong>. Durant mes années en MMI, j'ai également été à la WebTV de l'iUT Nord Franche-Comté où j'ai participé à la production d'émission en direct pour la Journée Portes Ouvertes.</p>
 
           <img class="hidden md:block md:m-auto" src="@/assets/double_fleche.svg" alt="Double flèche qui pointe vers le bas"> 
         </div>
