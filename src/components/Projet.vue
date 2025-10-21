@@ -32,33 +32,35 @@ defineProps({
 
 <template>
 <div class="py-10">
-    <div class="py-10">
+    <div>
         <div class="text-center">
-            <h1 class="text-3xl sm:text-8xl font-unbounded">{{ title }}</h1>
-            <h1 class="text-xl sm:text-6xl font-poppins text-cyan-400 test uppercase">{{ categorie }}</h1>
+            <h1 class="text-3xl sm:text-4xl font-unbounded">{{ title }}</h1>
+            <h2 class="text-xl sm:text-3xl font-poppins text-cyan-400 test uppercase">{{ categorie }}</h2>
         </div>    
-        <ImgS v-if="illustration" class="pt-10 w-4/5 sm:w-1/2 m-auto" bucket="prive-images" :name="illustration" />
-    </div>
-    <div class="py-10 sm:text-lg mx-8 sm:mx-24">
-        <p class="font-unbounded">{{ paragraphe }}</p>
-    </div>
-    <div class="w-max my-5 mx-auto bg-sky-500 text-xs sm:text-2xl rounded-xl p-1" v-if="link">
-        <div  class="bg-black h-full w-full rounded-lg px-8 py-1">
-        <a target="_blank" :href="link">Voir le site</a>
+        <div class="sm:flex align-middle p-2 sm:p-10">
+            <ImgS v-if="illustration" class="w-1/2 sm:w-1/5 m-auto" bucket="prive-images" :name="illustration" />
+            <div class="py-10 sm:text-lg mx-8 sm:mx-24">
+                <p class="font-unbounded text-sm md:text-base xl:text-lg">{{ paragraphe }}</p>
+                <div class="w-max my-5 mx-auto bg-sky-500 text-base sm:text-2xl rounded-xl p-1" v-if="link">
+                    <div  class="bg-black h-full w-full rounded-lg px-8 py-1">
+                        <a target="_blank" :href="link">Voir le site</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div v-if="harmonie">
-        <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24 mb-5">Harmonie colorée</h2>
+        <h2 class="font-unbounded font-medium text-lg sm:text-2xl ml-8 sm:ml-24 mb-5">Harmonie colorée</h2>
         <ImgS class="w-1/2 m-auto" bucket="prive-images" :name="harmonie" />
     </div>
-    <div v-if="logiciels" class="py-10">
-        <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24">Logiciel(s) utilisé(s)</h2>
+    <div v-if="logiciels.length > 0" class="py-10">
+        <h2 class="font-unbounded font-medium text-lg sm:text-2xl ml-8 sm:ml-24">Logiciel(s) utilisé(s)</h2>
         <div class="flex flex-wrap mt-10 items-center gap-10 justify-center">
                 <ImgS v-for="(logiciel, index) in logiciels" :key="index" class="h-20" bucket="prive-images" :name="logiciel" />
         </div>
     </div>
-    <div  v-if="langages">
-        <h2 class="font-unbounded font-medium text-lg sm:text-4xl ml-8 sm:ml-24">Langage(s) de programmation</h2>
+    <div v-if="langages.length > 0">
+        <h2 class="font-unbounded font-medium text-lg sm:text-2xl ml-8 sm:ml-24">Langage(s) de programmation</h2>
         <div class="flex flex-wrap mt-10 items-center gap-10 justify-center">
     <ImgS v-for="(langage, index) in langages" :key="index" class="h-20" bucket="prive-images" :name="langage" />
         </div>
