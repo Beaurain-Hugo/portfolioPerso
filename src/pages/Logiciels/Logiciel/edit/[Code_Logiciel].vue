@@ -3,6 +3,7 @@
     import {supabase} from '@/supabase';
     import FormKitLogiciel from '@/components/FormKitLogiciel.vue';
     const props = defineProps(["Code_Logiciel"])
+    console.log(props)
     const logiciels =ref({})
     const { data, error } = await supabase
       .from("Logiciels")

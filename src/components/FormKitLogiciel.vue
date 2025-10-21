@@ -27,11 +27,11 @@ async function upsertLogiciel(dataForm) {
 }
 
 async function supprimerLogiciel(dataForm) {
-  console.log("Dans suppression offre");
+  console.log(offre.value)
   const { data, error } = await supabase
     .from("Logiciels")
     .delete(dataForm)
-    .match({ id: offre.value.id });
+    .match({ Code_Logiciel: offre.value.Code_Logiciel });
   if (error) {
     console.error("Erreur à la suppression de ", offre, "erreur :", error);
   } else {

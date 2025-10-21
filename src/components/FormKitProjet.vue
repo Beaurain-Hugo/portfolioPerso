@@ -33,7 +33,7 @@ async function upsertProjet(dataForm) {
       error
     );
   } else {
-   router.push({ name: "Projets-Projet-slug", params: { slug: offre.slug } });
+   router.push({ name: "Projets-Projet-slug", params: { slug: dataForm.slug } });
   }
 }
 
@@ -93,7 +93,7 @@ async function supprimerOffre(dataForm) {
         type="select"
         name="categorie"
         label="Catégorie"
-        :options="['Projet Universitaire','Projet Client']"
+        :options="['universitaire','professionnel']"
         placeholder="Choisir une catégorie"/>
         <FormKit :type="imgUploadSupabase" name="illustration" label="Illustration du Projet"/>
         <FormKit name="paragraphe" type="textarea" rows="10" label="Présentation du Projet"/>
