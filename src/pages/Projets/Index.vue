@@ -1,66 +1,111 @@
 <script setup>
 import iconProjet from '@/components/iconProjet.vue';
 import { supabase, user } from '@/supabase';
-import {ref, onMounted} from 'vue';
+import newListProjets from '@/components/newListProjets.vue'
+import {ref, onMounted, computed} from 'vue';
 import {getAllProjets, getAllProjetsDev, getAllProjetsDesign, getAllProjetsTruc} from '@/composables/jsp.js';
 
-const title = ref()
-  const allProjetsVisible = ref(true)
-  const devProjetsVisible = ref(false)
-  const designProjetsVisible = ref(false)
-  const trucProjetsVisible = ref(false)
+const title = ref("Tous")
+const categories = ref(["universitaire", "professionnel"])
 
-const selectProjets = () => {
-    let projets = getAllProjets() 
-    console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Tous mes projets"
-    devProjetsVisible.value = false
-    designProjetsVisible.value = false
-    trucProjetsVisible.value = false
-    allProjetsVisible.value = true
-    return(projets)
+const categorieSelected = (cat) => {
+  categories.value=cat
+  cat.length > 1 ? title.value = "Tous" : title.value = cat[0]+"s"
 }
 
-let {data:projets} = await selectProjets()
+const PROJETS = ref([])
+const NB_PAGE_PROJETS = ref(0)
 
-const selectDev = () => {
-  let projets = getAllProjetsDev() 
-    console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Projets Universitaires"
-    allProjetsVisible.value = false
-    designProjetsVisible.value = false
-    trucProjetsVisible.value = false
-    devProjetsVisible.value = true
-    return(projets)
+const GRID_PROJETS = computed(() => {
+  const PROJETS_BY_PAGE = 3
+  // console.log("projets value", PROJETS.value)
+  return PROJETS.value.slice(0, props.max ?? 3 + PROJETS_BY_PAGE * NB_PAGE_PROJETS.value)
+})
+
+const seeMoreRecipes = () => {
+  NB_PAGE_PROJETS.value++
+  console.log(NB_PAGE_PROJETS.value)
 }
 
-let {data:projetsDev} = await selectDev()
+const MORE_PROJETS_TO_SHOW = computed(() => {
+  return GRID_PROJETS.value.length < PROJETS.value.length
+})
 
-const selectDesign = () => {
-  let projets = getAllProjetsDesign() 
-    console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Projets Clients"
-    allProjetsVisible.value = false 
-     allProjetsVisible.value = false
-     devProjetsVisible.value = false
-     designProjetsVisible.value = true
-    return(projets)}
+const fetchProjets = async () => {
+  try {
+    const {data:projets, error } = await supabase
+      .from('Projets')
+      .select('*')
+      // .eq('visible', true)
+      .limit(props.max ?? 10000)
+    // console.log(projets)
+    PROJETS.value = projets
+    console.log(PROJETS.value)
+    // console.log(PROJETS.value)
+  } catch (error) {
+    console.log(error)
+  }
+} 
 
-let {data:projetsDesign} = await selectDesign()
-const selectTruc = () => {
-  let projets = getAllProjetsTruc() 
-    console.log('Récupération des données de tous les projets dans la vue', projets)
-    title.value="Projets truc"
-    allProjetsVisible.value = false
-    devProjetsVisible.value = false
-    designProjetsVisible.value = false
-    trucProjetsVisible.value = true
-    return(projets)}
+const PROJETS_UNIVERSITAIRES = computed(() => {
+  return PROJETS.value.filter((projet) => projet.categorie.toLowerCase().includes(`universitaire`)) // version courte
+  // return recipes.value.filter((recipe)=> {
+  //   return (recipe.recipe_name.includes('Spaghetti'))
+  // })
+})
 
-let {data:projetsTruc} = await selectTruc()
+// const selectProjets = () => {
+//     let projets = getAllProjets() 
+//     console.log('Récupération des données de tous les projets dans la vue', projets)
+//     title.value="Tous mes projets"
+//     devProjetsVisible.value = false
+//     designProjetsVisible.value = false
+//     trucProjetsVisible.value = false
+//     allProjetsVisible.value = true
+//     return(projets)
+// }
+
+// let {data:projets} = await selectProjets()
+
+// const selectDev = () => {
+//   let projets = getAllProjetsDev() 
+//     console.log('Récupération des données de tous les projets dans la vue', projets)
+//     title.value="Projets Universitaires"
+//     allProjetsVisible.value = false
+//     designProjetsVisible.value = false
+//     trucProjetsVisible.value = false
+//     devProjetsVisible.value = true
+//     return(projets)
+// }
+
+// let {data:projetsDev} = await selectDev()
+
+// const selectDesign = () => {
+//   let projets = getAllProjetsDesign() 
+//     console.log('Récupération des données de tous les projets dans la vue', projets)
+//     title.value="Projets Clients"
+//     allProjetsVisible.value = false 
+//      allProjetsVisible.value = false
+//      devProjetsVisible.value = false
+//      designProjetsVisible.value = true
+//     return(projets)}
+
+// let {data:projetsDesign} = await selectDesign()
+// const selectTruc = () => {
+//   let projets = getAllProjetsTruc() 
+//     console.log('Récupération des données de tous les projets dans la vue', projets)
+//     title.value="Projets truc"
+//     allProjetsVisible.value = false
+//     devProjetsVisible.value = false
+//     designProjetsVisible.value = false
+//     trucProjetsVisible.value = true
+//     return(projets)}
+
+// let {data:projetsTruc} = await selectTruc()
 
 onMounted( () => {
-  selectProjets()
+  fetchProjets()
+  // categorieSelected(['universitaire', 'professionnel'])
 })
 
 
@@ -85,80 +130,17 @@ mounted() {
 <template>
   <main class="bg-zinc-900">
     <div class="text-4xl flex flex-col text-center">
-      <h1 class="font-unbounded">Projets</h1>
-      <h1 class="font-unbounded mt-3">{{ title }}</h1>
-
-      <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly m-5">
-        <li class="relative"><button class="active" @click="selectProjets">Tous mes projets</button></li>
-        <li class="relative"><button @click="selectDev">Projets universitaires</button></li>
-        <li class="relative"><button @click="selectDesign">Projets Clients</button></li>
-       <!-- <li class="relative"><button @click="selectTruc" href="#">Untruciyvhkv</button></li>-->
+      <h1 class="font-unbounded">Projets<br>{{title}}</h1>
+          <div class="bg-zinc-900 pt-5 sm:pt-10">
+      <ul class="font-unbounded text-sm text-slate-400 flex justify-evenly mx-5 mb-5">
+        <li class="relative"><button class="active" @click="categorieSelected(['universitaire', 'professionnel'])" href="">Tous mes projets</button></li>
+        <li class="relative"><button @click="categorieSelected(['universitaire'])">Projets universitaires</button></li>
+        <li class="relative"><button @click="categorieSelected(['professionnel'])">Projets clients</button></li>
       </ul>
-    </div>
-    <div v-show="allProjetsVisible" class="flex justify-center flex-wrap gap-2">
-      <div v-for="projet in projets" :key="projet.id"
-      class="relative group">
-          <button 
-            v-if="user" 
-            @click="$router.push({ name: 'Projets-Projet-edit-id', params: { id: projet.id } })"
-            class="hidden group-hover:block z-10 absolute top-0 right-0 p-1 border-double border-2">
-            Editer offre
-          </button>
-          <iconProjet 
-            v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" 
-          />
-      </div>
-    </div>
-    <div v-show="devProjetsVisible" class="flex justify-center flex-wrap gap-2">
-      <div v-for="projet in projetsDev" :key="projet.id"
-      class="relative group">
-          <button 
-            v-if="user" 
-            @click="$router.push({ name: 'Projets-Projet-edit-id', params: { id: projet.id } })"
-            class="hidden group-hover:block z-10 absolute top-0 right-0 p-1 border-double border-2">
-            Editer offre
-          </button>
-          <iconProjet 
-            v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" 
-          />
-      </div>
-    </div>
-    <div v-show="designProjetsVisible" class="flex justify-center flex-wrap gap-2">
-      <div v-if="projetsDesign.length > 1"  v-for="projet in projetsDesign" :key="projet.id"
-      class="relative group">
-          <button 
-            v-if="user" 
-            @click="$router.push({ name: 'Projets-Projet-edit-id', params: { id: projet.id } })"
-            class="hidden group-hover:block z-10 absolute top-0 right-0 p-1 border-double border-2">
-            Editer offre
-          </button>
-          <iconProjet 
-            v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-slug', params: { slug: projet.slug } })" 
-          />
-      </div>
-      <div v-else class="flex justify-center">
-      <p>Bientôt.</p>
+        <newListProjets :categorie="categories" />
     </div>
     </div>
-    
-    <div v-show="trucProjetsVisible" class="flex justify-center flex-wrap gap-2">
-      <div v-for="projet in projetsTruc" :key="projet.id"
-      class="relative group">
-          <button 
-            v-if="user" 
-            @click="$router.push({ name: 'Projets-Projet-edit-id', params: { id: projet.id } })"
-            class="hidden group-hover:block z-10 absolute top-0 right-0 p-1 border-double border-2">
-            Editer offre
-          </button>
-          <iconProjet 
-            v-bind="projet" 
-            @click=" $router.push({ name: 'Projets-Projet-title', params: { slug: projet.slug } })" 
-          />
-      </div>
-    </div>
+
   </main> 
 </template>
 
